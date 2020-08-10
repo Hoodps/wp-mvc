@@ -2,7 +2,7 @@
 
 class MvcFormHelper extends MvcHelper {
 
-	protected $is_in_admin_table = false;
+	protected $is_in_admin_table = true;
 
     public function create($model_name, $options=array()) {
         $defaults = array(
@@ -459,7 +459,7 @@ class MvcFormHelper extends MvcHelper {
         $options = array_merge($defaults, $options);
         $html = $options['before'];
         if (!empty($options['label'])) {
-            $label = '<label for="'.$options['id'].'">'.$options['label'].'</label>';
+            $label = '<label class="" for="'.$options['id'].'">'.$options['label'].'</label>';
 			$html .= ($this->is_in_admin_table) ? "<th scope='row'>{$label}</th><td>" : $label;
         } else {
 			$html .= '<td colspan="2">';
