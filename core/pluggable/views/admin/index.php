@@ -1,4 +1,11 @@
-<h2><?php echo MvcInflector::pluralize_titleize($model->name); ?></h2>
+<?php
+if (empty($this->title)) {
+    echo '<h2>'.MvcInflector::pluralize_titleize($model->name).'</h2>';
+}else{
+    echo '<h2>'.$this->title.'</h2>';
+}
+
+?>
 
 <form id="posts-filter" action="<?php echo MvcRouter::admin_url(); ?>" method="get">
 
